@@ -1,0 +1,20 @@
+<?php
+include('db_connect.php');
+
+//when form submitted
+if(isset($POST['save'])){
+
+    $wardenname = $_POST['warden_name'];
+    $mykad = $_POST['mykad_no'];
+    $address = $_POST['address'];
+    $contact = $_POST['contact'];
+    $gender = $_POST['gender'];
+    $age = $_POST['age'];
+    $registration_date = $_POST['registration_date'];
+    $created_date = date("Y-m-d");
+
+    $sql = "INSERT INTO warden (warden_name, mykad_no, address, contact_no,
+    gender, age, registration_date,created_date)
+    VALUE ('$wardenname','$mykad','$address','$contact','$gender','$age','$registration_date',
+    $created_date')";
+}
